@@ -11,3 +11,5 @@ try {
 }
 
 let db = client.db(process.env.db);
+
+module.exports = { db };

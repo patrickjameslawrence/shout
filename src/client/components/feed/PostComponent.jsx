@@ -12,15 +12,15 @@ export default class PostComponent extends Component {
 
   render() {
     const { id, text, poster, timestamp } = this.state;
+    var date = new Date(timestamp);
     return (
-      <div>
-        <Card className="m-1" style={{ width: "20rem" }}>
-          <Card.Body>
-            <Card.Text>{text ? text : "Loading..."}</Card.Text>
-
+      <div id={id}>
+        <Card className="m-1 shoutWrapper">
+          <Card.Body className="shoutBody">
+            <Card.Text className="shoutText">{text ? text : "Loading..."}</Card.Text>
             <div className="posterProfile">
-              <Card.Title>{poster.username ? poster.username : "Loading..."}</Card.Title>
-              <Card.Subtitle>{timestamp ? timestamp : "Loading..."}</Card.Subtitle>
+              <Card.Subtitle>{poster.username ? poster.username : "Loading..."}</Card.Subtitle>
+              <Card.Subtitle>{timestamp ? date.toLocaleString() : "Loading..."}</Card.Subtitle>
             </div>
           </Card.Body>
         </Card>
